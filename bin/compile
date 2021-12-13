@@ -39,3 +39,6 @@ ln -s /app/.apt/usr/share/fonts $1/usr-s-fonts
 export PATH="$PATH:$1/.apt/usr/bin"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$1/.apt/usr/lib:$1/.apt/usr/lib/x86_64-linux-gnu"
 find $1/.apt/usr/share/fonts/X11 -type d | xargs $1/.apt/usr/bin/mkfontdir
+
+Xvfb -ac :99 -screen 0 1280x1024x16 &
+export DISPLAY=:99
